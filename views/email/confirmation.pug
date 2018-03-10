@@ -1,0 +1,27 @@
+//- Handy mixin for making buttons
+mixin button(url, text)
+  table.btn.btn-primary(border='0', cellpadding='0', cellspacing='0', align='center', style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 60%;box-sizing: border-box;")
+    tbody
+      tr
+        td(align='center', style="font-family: sans-serif;font-size: 16px !important;vertical-align: top;padding-bottom: 15px;")
+          table(border='0', cellpadding='5', cellspacing='5', style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100% !important;")
+            tbody: tr: td(style="font-family: sans-serif;font-size: 16px !important;vertical-align: top;background-color: #ed8e20;border-radius: 5px;text-align: center;"): a(href=url, target='_blank', style="color: #fff;text-decoration: none;background-color: #ed8e20;border: solid 1px #ed8e20;border-radius: 5px;box-sizing: border-box;cursor: pointer;display: inline-block;font-size: 16px !important;font-weight: bold;margin: 0;padding: 12px 25px;text-transform: uppercase;border-color: #ed8e20;width: 100% !important;")= text
+
+//- The Email
+doctype html
+html
+  head
+    meta(name='viewport', content='width=device-width')
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+  body(style="font-family: sans-serif;-webkit-font-smoothing: antialiased;font-size: 14px;line-height: 1.4;margin: 0;padding: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;")
+    table.body(border='0', cellpadding='0', cellspacing='0', align='center', style="max-width: 600px;border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;")
+      tr
+        td(style="font-family: sans-serif;font-size: 16px !important;vertical-align: top;font-weight: 400;background-color: #004E89;color: #fff;padding-left: 20px;")
+          h2 It's awesome baby!
+      tr
+        td(style="font-family: sans-serif;font-size: 16px !important;vertical-align: top;background-color: #f7f7f7;padding: 20px;")
+          p(style="font-family: sans-serif;font-size: 16px !important;font-weight: normal;margin: 0;margin-bottom: 15px;") #[strong Hello #{username},]
+          p(style="font-family: sans-serif;font-size: 16px !important;font-weight: normal;margin: 0;margin-bottom: 15px;") Welcome to the #{year} #{poolName} March Madness pool. You can edit your picks until tipoff of the games on #{closingDateTime} using the button below.
+          +button(editUrl, 'Edit bracket')
+          br
+          p(style="font-family: sans-serif;font-size: 16px !important;font-weight: normal;margin: 0;margin-bottom: 15px;") If you have any questions or issues, do not reply to this email. Please email me at #[a(href="mailto:jim@jimandmeg.com", style="color: #ed8e20; text-decoration: underline;") jim@jimandmeg.com]

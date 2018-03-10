@@ -1,0 +1,46 @@
+doctype html
+html
+  head
+    title #{h.moment().format('YYYY')} March Madness
+
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible',content='IE=edge,chrome=1')
+    meta(name='viewport', content='width=device-width,initial-scale=1.0')
+    link(rel='icon' href='images/favicon.ico?', type='image/x-icon') 
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Holtwood+One+SC')
+    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Kaushan+Script|Herr+Von+Muellerhoff')
+    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Abel')
+    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Istok+Web|Roboto+Condensed:700')
+    link(rel='stylesheet', href='/stylesheets/main.css')
+    link(rel='stylesheet', href='/stylesheets/navigation.css')
+    link(rel='stylesheet', href='/stylesheets/user_info.css')
+    link(rel='stylesheet', href='/stylesheets/standings.css')
+    link(rel='stylesheet', href='/stylesheets/bracket.css')
+    
+    script(src='https://code.jquery.com/jquery-3.2.1.min.js', integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=', crossorigin='anonymous')
+    if !guiJsOnly
+      script(src='/javascripts/ncaa.js', type='text/javascript')
+    script(src='/javascripts/gui.js', type='text/javascript')
+
+  body
+    header
+      nav#cssmenu
+        div#head-mobile
+        div.button
+        ul
+          li: a(href='/') HOME
+          li: a(href='/standings') STANDINGS
+          li: a(href='/standings/sweet16') SWEET 16 STANDINGS
+          //- li: a(href='/standings/archives') ARCHIVES
+    header.hero
+      div.hero-wrap
+        p.intro#intro #{poolName} March Madness
+        h1#headline Tournament
+        p.year
+          i.fa.fa-star
+          | #{h.moment().format('YYYY')}
+          i.fa.fa-star
+
+    block content
+    

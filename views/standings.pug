@@ -1,0 +1,24 @@
+include layout
+
+section#bracket
+    div.container
+      div.standings
+        table
+          tr.header
+            th 
+              | Bracket 
+              span.resize_mobile Name
+            th Champion
+            th Score
+            th 
+              span.resize_mobile Best 
+              | Possible 
+              span.resize_mobile Score
+
+          each user in standings
+            tr
+              td.standings_name 
+                a(href='/bracket/'  + user.userDisplayToken) #{user.userName}
+              td.standings_champ #{user.teamName} (#{user.userTieBreakerPoints})
+              td.standings_score #{user.userScore}
+              td.standings_score #{user.bestPossibleScore}
