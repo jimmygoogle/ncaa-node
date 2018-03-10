@@ -1,7 +1,6 @@
  var db = require('../db');
 const poolController = require('./poolController');
 
-
 const getStandings = (args) => {
   const req = args.req;
   const res = args.res;

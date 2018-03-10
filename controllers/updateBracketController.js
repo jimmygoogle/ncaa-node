@@ -1,5 +1,4 @@
 const db = require('../db');
-const async = require('async');
 const poolController = require('./poolController');
 const mailerController = require('./mailerController');
 
