@@ -18,6 +18,7 @@ router.post('/bracket/:userToken/e', updateBracketController.updateUserPicks);
 router.get('/pool', poolController.showPoolForm);
 router.post('/pool', poolController.getPostedPoolInfo);
 router.get('/pool/:poolName', poolController.getPoolInfo);
+router.get('/demo', poolController.setDemoMode);
 
 // show standings
 router.get('/standings', standingsController.showFullStandings);

@@ -54,3 +54,6 @@ exports.getPoolInfo = (req, res) => {
 exports.showPoolForm = (req, res) => {
   res.render('pool_form');
 }
+exports.setDemoMode = (req, res) => {
+  res.redirect('/pool/butler');
+}
