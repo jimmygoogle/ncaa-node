@@ -18,7 +18,12 @@ section#bracket
           each user in standings
             tr
               td.standings_name 
-                a(href='/bracket/'  + user.userDisplayToken) #{user.userName}
-              td.standings_champ #{user.teamName} (#{user.userTieBreakerPoints})
+                a(href='/bracket/'  + user.userDisplayToken) 
+                | #{user.userName} 
+                if user.realName
+                  span.resize_mobile (#{user.realName})
+              td.standings_champ 
+                | #{user.teamName} 
+                span.resize_mobile (#{user.userTieBreakerPoints})
               td.standings_score #{user.userScore}
               td.standings_score #{user.bestPossibleScore}
