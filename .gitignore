@@ -2,7 +2,6 @@
 ######################
 *.env
 node_modules
-bin
 
 
 # Logs and DB #
