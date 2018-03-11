@@ -230,8 +230,6 @@ const clearPreviousPicks = (gameNumber, userPickedTeam, slotString) => {
   //console.log('other team in game is ' + getOtherTeamInGame);
 
   if(getOtherTeamInGame){
-    const otherTeamRegExMatch = eval('/' + getOtherTeamInGame + '/');
-
     // only check (match) specified slots (ex 81|105|119|127)
     const slotMatch = eval('/' + slotString + '/');
 
@@ -246,12 +244,12 @@ const clearPreviousPicks = (gameNumber, userPickedTeam, slotString) => {
       if(
         (slotNumber >= 65)
         &&
-        (slotMatch.test( slotNumber ) )
+        (slotMatch.test(slotNumber) )
       ){
         const pick = $(this).text();
 
         //get rid of all future picks that match
-        if(pick.match( otherTeamRegExMatch ) ){
+        if(pick.match(getOtherTeamInGame) ){
           $(this).empty();
         }
       }
