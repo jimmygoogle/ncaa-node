@@ -49,7 +49,7 @@ const writePicks = (args) => {
 
   // get the pool name from the cookie
   // this will determine what happens next
-  poolController.getPoolName(req)
+  poolController.getPoolName(req, res)
   .then(poolName => {
     cookiedPoolName = poolName;
 

@@ -40,7 +40,7 @@ const getBracket = (args) => {
 
   // get the pool name from the cookie
   // this will determine what happens next
-  poolController.getPoolName(req)
+  poolController.getPoolName(req, res)
   .then(poolName => {
     cookiedPoolName = poolName;
 
@@ -108,6 +108,20 @@ const getBracket = (args) => {
         }
 
         userPickedTeamData = adminTeamData;
+      }
+      // showing a user's bracket so set all the future incorrect picks based on the current incorrect ones
+      else {
+        let incorrectPicks = {};
+        for(const index of userPickedTeamData.keys()) {
+          const data = userPickedTeamData[index];
+          if(data.pickCSS == 'incorrectPick') {
+            incorrectPicks[data.teamID] = 1;
+          }
+
+          if(!data.pickCSS && incorrectPicks[data.teamID]) {
+            data.pickCSS = 'incorrectPick';
+          } 
+        }
       }
     }
 

@@ -147,7 +147,7 @@ const validateUserInput = () => {
       data: data,
       success: function (result) {
         //disable submit button so the users do not flood the system
-        //$("#submit").hide();
+        $("#submit").hide();
 
         // fade slowly when you are not allowing the user to edit multiple times
         const fadeInterval = multipleEdits ? 2000 : 4000;

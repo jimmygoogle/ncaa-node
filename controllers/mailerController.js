@@ -21,10 +21,12 @@ exports.sendConfirmationEmail = (args) => {
 }
 
 exports.sendErrorEmail = (args) => {
+  const err = args.err;
+  //console.log(err);
   const sendMail = promisify(send);
   return sendMail({
       subject: 'March Madness error',
-      text: JSON.stringify(args.err, null, 2),
+      text: JSON.stringify(err, null, 2),
       to: process.env.ERROR_EMAIL
     });
 }
