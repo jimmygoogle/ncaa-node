@@ -97,6 +97,17 @@ const validateUserInput = () => {
       error_message = 'Please pick all of the games.';
       status = false;
     }
+    
+    // if we are editing a user changes their pick we are clear that team from other fields
+    // make sure they filled those in again
+    if((editTypeValue == 'edit')) {
+      $('#bracket').find('li').each(function() {
+        if(!$(this).attr('data-team-id')) {
+          error_message = 'Please pick all of the games.';
+          status = false;
+        }
+      });
+    }
 
     if(status && !emailAddress || status && !emailAddress.match(/\@/)) {
       error_message = 'A valid email address is required.';
@@ -251,6 +262,7 @@ const clearPreviousPicks = (gameNumber, userPickedTeam, slotString) => {
         //get rid of all future picks that match
         if(pick.match(getOtherTeamInGame) ){
           $(this).empty();
+          $(this).attr('data-team-id', '');
         }
       }
     });

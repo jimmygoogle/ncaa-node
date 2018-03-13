@@ -192,11 +192,6 @@ section#bracket
 
       span(id='ncaaWinner', data-pick=userPickedTeamData[62].pickCSS ? userPickedTeamData[62].pickCSS : '', data-team=userPickedTeamData[62].seedID ? userPickedTeamData[62].seedID + ' ' + userPickedTeamData[62].teamName : '', data-team-id=userPickedTeamData[62].teamID)
 
-      //- show form to submit pool data
-      if userBracketInfoForm
-        div#userBracketInfoForm
-         include additional_info
-
     div.split.split-one.bottom
       div.round.round-one.current
         //- LEFT BOTTOM 16 START
@@ -350,3 +345,9 @@ section#bracket
             
     //- END ROUND ONE
     //- RIGHT BOTTOM 16 END
+
+    //- show form to submit pool data
+    if userBracketInfoForm
+      div#userBracketInfoForm
+       include additional_info
+         

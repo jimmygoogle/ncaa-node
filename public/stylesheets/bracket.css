@@ -337,7 +337,8 @@ li {
   .round2-header {transform: translate(0,0);}
   .eight-header {transform: translate(0,0);}
   .sixteen-header {transform: translate(0,0);}
-  .final-four-top, .final-four-bottom {float: none; width: 100%;}
+  .final-four-right {padding-bottom: 40px;}
+  .bracket_details {max-width: 90%;}
   
   .top {
     order: 1;
@@ -353,6 +354,9 @@ li {
   }
   .middle {
     order: 5;
+  }
+  #userBracketInfoForm {
+    order: 6;
   }
 }
 
