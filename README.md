@@ -16,5 +16,5 @@ This project is licensed under the GNU General Public License - see the [LICENSE
 ## Acknowledgments
 
 * Paul Gendek
-* [Dave Stern] (https://github.com/davestern)
+* [Dave Stern](https://github.com/davestern)
 * UI inspired by [Flexbox Madness](https://codepen.io/jbeason/pen/Wbaedb) by Joe Beason
