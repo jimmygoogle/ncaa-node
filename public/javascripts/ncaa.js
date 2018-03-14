@@ -19,7 +19,7 @@ $(document).ready (
   }
 );
 
-const loadUserPicks = () => {
+function loadUserPicks() {
   const $userBracketInfoForm = $('#userBracketInfoForm');
   const bracketType = $userBracketInfoForm.find('#bracketType').val();
   const editTypeValue = $userBracketInfoForm.find('#editType').val();
@@ -48,7 +48,7 @@ const loadUserPicks = () => {
   //console.log(userPicks);
 }
 
-const checkUserPool = () => {
+function checkUserPool() {
   $.ajax({
   type: "POST",
   url:  "/pool",
@@ -69,7 +69,7 @@ const checkUserPool = () => {
   });
 }
 
-const validateUserInput = () => {
+function validateUserInput() {
   let status = true;
   let multipleEdits = false;
   const $userBracketInfoForm = $('#userBracketInfoForm');
@@ -144,11 +144,11 @@ const validateUserInput = () => {
   if(status) {
     // set base data
     const data = {
-      emailAddress,
-      username,
-      firstName,
-      tieBreakerPoints,
-      bracketTypeName,
+      emailAddress: emailAddress,
+      username: username,
+      firstName: firstName,
+      tieBreakerPoints: tieBreakerPoints,
+      bracketTypeName: bracketTypeName,
       userPicks: JSON.stringify(userPicks)
     };
 
@@ -182,7 +182,7 @@ const validateUserInput = () => {
   return(false);
 }
 
-const setUserPick = (obj) => {
+function setUserPick(obj) {
   // set team user picked ex: 5 Utah
   const userPickedTeam = obj.text();
 
@@ -230,12 +230,12 @@ const setUserPick = (obj) => {
   //console.log(userPicks);
 }
 
-const setUserFormData = (gameData, teamID) => {
+function setUserFormData(gameData, teamID) {
   const gameID = parseInt(gameData.match(/\d+/));
   userPicks[gameID] = teamID;
 }
 
-const clearPreviousPicks = (gameNumber, userPickedTeam, slotString) => {
+function clearPreviousPicks(gameNumber, userPickedTeam, slotString) {
   //get the 'other' team in the current game the user is picking
   const getOtherTeamInGame = _getOtherTeamInGame(gameNumber, userPickedTeam);
   //console.log('other team in game is ' + getOtherTeamInGame);
@@ -269,7 +269,7 @@ const clearPreviousPicks = (gameNumber, userPickedTeam, slotString) => {
   }
 }
 
-const _getOtherTeamInGame = (gameNumber, userPickedTeam) => {
+function _getOtherTeamInGame(gameNumber, userPickedTeam) {
   let teamsInGame = [];
 
   //get both teams in game

@@ -7,7 +7,7 @@ $(document).ready (function() {
   setStandings();
 });
 
-const setFinalGame = () => {
+function setFinalGame() {
   const winner = $('#bracket').find('#ncaaWinner').attr('data-team');
   const pickCss = $('#bracket').find('#ncaaWinner').attr('data-pick');
 
@@ -32,7 +32,7 @@ const setFinalGame = () => {
   });
 }
 
-const setStandings = () => {
+function setStandings() {
   //make all rows in standings clickable
   $('.standings').find('tr').click(function() {
     const href = $(this).find("a").attr("href");
