@@ -51,6 +51,7 @@
 @media screen and (max-width: 800px) {
 	 .standings {
 	   width: 100%;
+	   font-size: 1em;
 	 }
   .standings table {
     border: 0px;
