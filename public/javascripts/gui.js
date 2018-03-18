@@ -8,7 +8,7 @@ $(document).ready (function() {
 });
 
 function setFinalGame() {
-  const winner = $('#bracket').find('#ncaaWinner').attr('data-team');
+  const winner = $('#bracket').find('#ncaaWinner').attr('data-team-id');
   const pickCss = $('#bracket').find('#ncaaWinner').attr('data-pick');
 
   if(winner === '') {
@@ -16,11 +16,10 @@ function setFinalGame() {
   }
 
   $('.game63').find('li').each(function(){
-    const team = $(this).text();
-    const regex = new RegExp(team);
-    if(winner.match(regex)) {
+    const teamID = $(this).attr('data-team-id');
+
+    if(teamID === winner) {
       // set winner
-      $(this).text(winner);
       $(this).addClass('winner');
       
       // set the correct pick class for the winner
