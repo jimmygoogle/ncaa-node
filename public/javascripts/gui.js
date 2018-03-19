@@ -11,7 +11,7 @@ function setFinalGame() {
   const winner = $('#bracket').find('#ncaaWinner').attr('data-team-id');
   const pickCss = $('#bracket').find('#ncaaWinner').attr('data-pick');
 
-  if(winner === '') {
+  if(!winner) {
     return false;
   }
 
