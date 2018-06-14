@@ -166,8 +166,8 @@ li {
 }
 
 .champion1 li, .champion li, .round li {
-  background-color: #fff;
-  box-shadow: none; opacity: 0.45;
+  background: rgb(255, 255, 255);
+  background: rgba(255, 255, 255, 0.45);
 }
 
 .current li {opacity: 1;}
