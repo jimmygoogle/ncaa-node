@@ -9,6 +9,9 @@ It's awesome baby! A March Madness bracket written in node.js/mysql. It was prev
 3. run 'npm start'
 4. Go to http://localhost:8888 
 
+## Demo
+You can see a demo [here](http://ncaa.jimandmeg.com/demo)
+
 ## License
 
 This project is licensed under the GNU General Public License - see the [LICENSE](LICENSE) file for details
